@@ -95,6 +95,18 @@ public class CalculatorDivTest {
         assertEquals(res, cal.divide(a,b),0.1);
     }
 
+    @Test(expected = InvalidParameterException.class)
+    public void DividePositiveNumbersWithTreeDigitsAfterDecimalPoint(){
+        System.out.println("Divide zero by zero ");
+        double a = 6.555;
+        double b = 5.999;
+//        double res = 1.092682114;
+        double res = 1.093;
+        //depricated with 2 params
+        assertEquals(res, cal.divide(a,b),0.001);
+    }
+
+
     @AfterClass
     public static void tearDown(){
         System.out.println("Test finished");
